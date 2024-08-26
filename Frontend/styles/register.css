@@ -1,0 +1,107 @@
+/* Background and Main Container */
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../assets/petshop_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Container Styling */
+#main-container {
+    width: 400px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Logo and Title Area */
+#logoArea img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#titleArea .h1s {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#titleArea p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Form Styling */
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+#form input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Link Form Styling */
+#linkForm {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0;
+}
+
+#linkForm .link {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#linkForm .link:hover {
+    color: #0056b3;
+}
+
+/* Button Styling */
+#form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+#form button:hover {
+    background-color: #218838;
+}
