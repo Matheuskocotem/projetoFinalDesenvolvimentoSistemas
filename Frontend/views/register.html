@@ -17,17 +17,17 @@
                     <h1 id="title">Criar Conta</h1>
                     <p>Cadastre-se para ter acesso <br> a todos os recursos do Pet Shop</p>
                 </div>
-                <div id="form">
-                    <input type="text" id="name" placeholder="Nome" required>
-                    <input type="text" id="surname" placeholder="Sobrenome" required>
-                    <input type="email" id="email" placeholder="Email" required>
-                    <input type="password" id="password" placeholder="Senha" required>
-                    <input type="password" id="confirmPassword" placeholder="Confirmar Senha" required>
+                <form id="form" action="/backend/register.php" method="post">
+                    <input type="text" id="name" name="name" placeholder="Nome" required>
+                    <input type="text" id="surname" name="surname" placeholder="Sobrenome" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="password" id="password" name="password" placeholder="Senha" required>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmar Senha" required>
                     <div id="linkForm">
                         <a class="link" href="../views/login.html">Já tem uma conta? Faça login.</a>
                     </div>
-                    <button type="button" class="btn btn-primary w-100" onclick="register()">Criar Conta</button>
-                </div>
+                    <button type="submit" class="btn btn-primary w-100">Criar Conta</button>
+                </form>
             </div>
         </div>
     </div>
