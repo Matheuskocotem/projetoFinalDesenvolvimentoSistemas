@@ -18,16 +18,21 @@
                     <p>Cuidados e carinho para seu pet</p>
                 </div>
                 <div id="form">
+                    <div id="errorMessage" style="display: none; color: red;">
+                        Erro no login: Credenciais inválidas.
+                    </div>
                     <div id="successMessage" style="display: none; color: green;">
                         Cadastro realizado com sucesso! Por favor, faça login.
                     </div>
-                    <input type="text" id="email" placeholder="Email">
-                    <input type="password" id="password" placeholder="Senha">
-                    <div id="linkForm">
-                        <a class="link" href="/forgot-password">Esqueceu sua senha?</a>
-                        <a class="link" href="../views/register.html">Crie sua conta</a>
-                    </div>
-                    <button type="button" class="btn btn-primary w-100" onclick="login()">Entrar</button>
+                    <form id="loginForm" method="POST">
+                        <input type="text" id="email" name="email" placeholder="Email" required>
+                        <input type="password" id="password" name="password" placeholder="Senha" required>
+                        <div id="linkForm">
+                            <a class="link" href="/forgot-password">Esqueceu sua senha?</a>
+                            <a class="link" href="../views/register.html">Crie sua conta</a>
+                        </div>
+                        <button type="button" class="btn btn-primary w-100" onclick="login()">Entrar</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -1,42 +1,25 @@
-function showError(message) {
-    alert(message);
-}
-
-function showSuccess(message) {
-    alert(message);
-}
-
-async function login() {
+function login() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const errorMessage = document.getElementById("errorMessage");
 
-    if (!email) {
-        showError("Email inválido.");
-        return;
-    }
-    if (!password) {
-        showError("Senha inválida.");
-        return;
-    }
-
-    const response = await fakeLogin(email, password);
-
-    if (response == 200) {
-        showSuccess("Login bem-sucedido. Bem-vindo ao Pet Shop!");
-        window.location.href = "dashboard.html";
-    } else {
-        showError("Erro no login: " + response.message);
-    }
-}
-
-function fakeLogin(email, password) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            if (email === "petlover@example.com" && password === "mypassword") {
-                resolve(200);
-            } else {
-                resolve({ message: "Credenciais inválidas." });
-            }
-        }, 1000);
+    fetch("../backend/login.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+    })
+    .then(response => response.text())
+    .then(data => {
+        if (data === "success") {
+            window.location.href = "../frontend/views/cart.php";
+        } else {
+            errorMessage.style.display = "block";
+        }
+    })
+    .catch(error => {
+        console.error("Erro:", error);
+        errorMessage.style.display = "block";
     });
 }
