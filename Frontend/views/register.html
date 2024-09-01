@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Conta - Pet Ideal</title>
+    <title>Registro Pet Shop</title>
     <link rel="stylesheet" href="../styles/register.css">
 </head>
 <body>
@@ -14,22 +14,32 @@
                     <img id="logo" src="../Img/logo.webp" alt="Pet Shop Logo">
                 </div>
                 <div id="titleArea">
-                    <h1 id="title">Criar Conta</h1>
-                    <p>Cadastre-se para ter acesso <br> a todos os recursos do Pet Shop</p>
+                    <h1 class="h1s">Crie sua Conta no Pet Ideal!</h1>
+                    <p>Complete os detalhes abaixo para se registrar.</p>
                 </div>
-                <form id="form" action="/backend/register.php" method="post">
-                    <input type="text" id="name" name="name" placeholder="Nome" required>
-                    <input type="text" id="surname" name="surname" placeholder="Sobrenome" required>
-                    <input type="email" id="email" name="email" placeholder="Email" required>
-                    <input type="password" id="password" name="password" placeholder="Senha" required>
-                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmar Senha" required>
-                    <div id="linkForm">
-                        <a class="link" href="../views/login.html">Já tem uma conta? Faça login.</a>
+                <div id="form">
+                    <div id="errorMessage" style="display: none; color: red;">
+                        Erro no registro: Dados inválidos.
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Criar Conta</button>
-                </form>
+                    <form id="registerForm" method="POST" action="/backend/register.php">
+                        <input type="text" id="name" name="name" placeholder="Nome" required>
+                        <input type="text" id="surname" name="surname" placeholder="Sobrenome" required>
+                        <input type="text" id="cpf" name="cpf" placeholder="CPF (123.123.123-12)" required>
+                        <input type="text" id="email" name="email" placeholder="Email" required>
+                        <input type="password" id="password" name="password" placeholder="Senha" required>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirme a Senha" required>
+                        <input type="text" id="phone" name="phone" placeholder="Telefone">
+                        <input type="text" id="address" name="address" placeholder="Endereço">
+                        <input type="text" id="city" name="city" placeholder="Cidade">
+                        <input type="text" id="state" name="state" placeholder="Estado">
+                        <input type="text" id="zip_code" name="zip_code" placeholder="CEP">
+                        <button type="submit" class="btn btn-primary w-100">Registrar</button>
+                    </form>
+                </div>
             </div>
         </div>
+        <footer id="appFooter"></footer>
     </div>
+    <script src="../js/register.js"></script>
 </body>
 </html>

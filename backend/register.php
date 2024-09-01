@@ -1,63 +1,54 @@
 <?php
+session_start();
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "petideal";
 
-// Conexão com o banco de dados
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conexao = mysqli_connect('localhost', 'root', '', 'petideal');
 
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
+if (!$conexao) {
+    die("Falha na conexão com o banco de dados: " . mysqli_connect_error());
 }
 
-// Função para sanitizar entradas
-function sanitizeInput($data) {
-    return htmlspecialchars(stripslashes(trim($data)));
+$name = mysqli_real_escape_string($conexao, $_POST['name']);
+$surname = mysqli_real_escape_string($conexao, $_POST['surname']);
+$cpf = mysqli_real_escape_string($conexao, $_POST['cpf']);
+$email = mysqli_real_escape_string($conexao, $_POST['email']);
+$password = mysqli_real_escape_string($conexao, $_POST['password']);
+$confirmPassword = mysqli_real_escape_string($conexao, $_POST['confirmPassword']);
+$phone = mysqli_real_escape_string($conexao, $_POST['phone']);
+$address = mysqli_real_escape_string($conexao, $_POST['address']);
+$city = mysqli_real_escape_string($conexao, $_POST['city']);
+$state = mysqli_real_escape_string($conexao, $_POST['state']);
+$zip_code = mysqli_real_escape_string($conexao, $_POST['zip_code']);
+
+
+if ($password !== $confirmPassword) {
+    echo "As senhas não coincidem!";
+    echo "<br><a href='register.html'>Tentar Novamente</a>";
+    exit();
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = sanitizeInput($_POST['name']);
-    $surname = sanitizeInput($_POST['surname']);
-    $email = sanitizeInput($_POST['email']);
-    $password = sanitizeInput($_POST['password']);
-    $confirmPassword = sanitizeInput($_POST['confirmPassword']);
-
-    // Verificar se as senhas coincidem
-    if ($password !== $confirmPassword) {
-        echo "As senhas não coincidem.";
-        exit();
-    }
-
-    // Verificar se o email já está registrado
-    $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $stmt->store_result();
-
-    if ($stmt->num_rows > 0) {
-        echo "Este email já está registrado.";
-        exit();
-    }
-    $stmt->close();
-
-    // Criptografar a senha
-    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-
-    // Inserir o novo usuário no banco de dados
-    $stmt = $conn->prepare("INSERT INTO users (name, surname, email, password) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $name, $surname, $email, $hashedPassword);
-
-    if ($stmt->execute()) {
-        header("Location: ../frontend/views/login.html?success=1");
-        exit();
-    } else {
-        echo "Erro ao criar conta: " . $stmt->error;
-    }
-
-    $stmt->close();
+$sql_check = "SELECT * FROM users WHERE email = '$email' OR cpf = '$cpf'";
+$result_check = mysqli_query($conexao, $sql_check);
+if (mysqli_num_rows($result_check) > 0) {
+    echo "Usuário já registrado com este CPF ou email.";
+    echo "<br><a href='register.html'>Tentar Novamente</a>";
+    exit();
 }
 
-$conn->close();
+// Hash da senha
+$password_hashed = password_hash($password, PASSWORD_DEFAULT);
+
+// Insere os dados na tabela de usuários
+$sql_insert = "INSERT INTO users (name, surname, cpf, email, password, phone, address, city, state, zip_code) 
+               VALUES ('$name', '$surname', '$cpf', '$email', '$password_hashed', '$phone', '$address', '$city', '$state', '$zip_code')";
+
+if (mysqli_query($conexao, $sql_insert)) {
+    echo "Registro efetuado com sucesso!";
+    header('Location: /Teste-projetofinal/backend/login.html'); // Redireciona para a página de login
+} else {
+    echo "Erro ao registrar: " . mysqli_error($conexao);
+}
+
+// Fecha a conexão com o banco de dados
+mysqli_close($conexao);
 
