@@ -1,54 +1,44 @@
 <?php
-session_start();
 
+$conexao = mysqli_connect('localhost', 'root', '', 'petshoop');
 
-$conexao = mysqli_connect('localhost', 'root', '', 'petideal');
 
 if (!$conexao) {
     die("Falha na conexão com o banco de dados: " . mysqli_connect_error());
 }
 
-$name = mysqli_real_escape_string($conexao, $_POST['name']);
-$surname = mysqli_real_escape_string($conexao, $_POST['surname']);
+
+$nome = mysqli_real_escape_string($conexao, $_POST['name']);
+$sobrenome = mysqli_real_escape_string($conexao, $_POST['surname']);
 $cpf = mysqli_real_escape_string($conexao, $_POST['cpf']);
 $email = mysqli_real_escape_string($conexao, $_POST['email']);
-$password = mysqli_real_escape_string($conexao, $_POST['password']);
-$confirmPassword = mysqli_real_escape_string($conexao, $_POST['confirmPassword']);
-$phone = mysqli_real_escape_string($conexao, $_POST['phone']);
-$address = mysqli_real_escape_string($conexao, $_POST['address']);
-$city = mysqli_real_escape_string($conexao, $_POST['city']);
-$state = mysqli_real_escape_string($conexao, $_POST['state']);
-$zip_code = mysqli_real_escape_string($conexao, $_POST['zip_code']);
+$senha = mysqli_real_escape_string($conexao, password_hash($_POST['password'], PASSWORD_DEFAULT)); 
+$confirmarSenha = $_POST['confirmPassword'];
 
-
-if ($password !== $confirmPassword) {
-    echo "As senhas não coincidem!";
-    echo "<br><a href='register.html'>Tentar Novamente</a>";
+// Verificação se as senhas coincidem
+if ($_POST['password'] !== $confirmarSenha) {
+    echo "<script>alert('As senhas não coincidem!'); window.location.href='../frontend/register.html';</script>";
     exit();
 }
 
-$sql_check = "SELECT * FROM users WHERE email = '$email' OR cpf = '$cpf'";
-$result_check = mysqli_query($conexao, $sql_check);
-if (mysqli_num_rows($result_check) > 0) {
-    echo "Usuário já registrado com este CPF ou email.";
-    echo "<br><a href='register.html'>Tentar Novamente</a>";
+// Verificação se o CPF já está registrado
+$sql = "SELECT cpf FROM clientes WHERE cpf = '$cpf'";
+$resultado = mysqli_query($conexao, $sql);
+
+if (mysqli_num_rows($resultado) > 0) {
+    echo "<script>alert('CPF já cadastrado!'); window.location.href='../frontend/register.html';</script>";
     exit();
 }
 
-// Hash da senha
-$password_hashed = password_hash($password, PASSWORD_DEFAULT);
+// Inserção no banco de dados
+$sql = "INSERT INTO clientes (nome, sobrenome, cpf, email, senha, telefone, endereco, cidade, estado, cep) 
+        VALUES ('$nome', '$sobrenome', '$cpf', '$email', '$senha', '$telefone', '$endereco', '$cidade', '$estado', '$cep')";
 
-// Insere os dados na tabela de usuários
-$sql_insert = "INSERT INTO users (name, surname, cpf, email, password, phone, address, city, state, zip_code) 
-               VALUES ('$name', '$surname', '$cpf', '$email', '$password_hashed', '$phone', '$address', '$city', '$state', '$zip_code')";
-
-if (mysqli_query($conexao, $sql_insert)) {
-    echo "Registro efetuado com sucesso!";
-    header('Location: /Teste-projetofinal/backend/login.html'); // Redireciona para a página de login
+if (mysqli_query($conexao, $sql)) {
+    echo "<script>alert('Cadastro realizado com sucesso!'); window.location.href='../frontend/login.html';</script>";
 } else {
-    echo "Erro ao registrar: " . mysqli_error($conexao);
+    echo "<script>alert('Erro ao cadastrar: " . mysqli_error($conexao) . "'); window.location.href='../frontend/register.html';</script>";
 }
 
-// Fecha a conexão com o banco de dados
-mysqli_close($conexao);
 
+mysqli_close($conexao);
