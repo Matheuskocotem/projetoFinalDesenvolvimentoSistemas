@@ -7,31 +7,57 @@
     <link rel="stylesheet" href="../styles/login.css">
 </head>
 <body>
-    <div id="main">
-        <div id="main-container">
-            <div id="formArea">
-                <div id="logoArea">
-                    <img id="logo" src="../Img/logo.webp" alt="Pet Shop Logo">
-                </div>
-                <div id="titleArea">
-                    <h1 class="h1s">Bem-vindo ao Pet Ideal!</h1>
-                    <p>Cuidados e carinho para seu pet</p>
-                </div>
-                <div id="form">
-                    <form id="loginForm" method="POST" action="/backend/login.php">
-                        <input type="text" id="email" name="email" placeholder="Email" required>
-                        <input type="password" id="password" name="password" placeholder="Senha" required>
-                        <div id="linkForm">
-                            <a class="link" href="/forgot-password">Esqueceu sua senha?</a>
-                            <a class="link" href="../views/register.html">Crie sua conta</a>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Entrar</button>
+    <div class="container">
+        <div class="content first-content">
+            <div class="first-column">
+                <h2 class="title">Bem-vindo de volta!</h2>
+                <p class="description">Crie sua Conta no Pet Ideal!</p>
+                <p class="description">Já possui uma conta? Faça login!</p>
+                <button class="btn">sign in</button>
+            </div>
+            <div class="second-column">
+                <h2 class="title">Crie sua conta</h2>
+                    <div class="social-media">
+                        <ul>
+                            <li><a href="#">facebook</a></li>
+                            <li><a href="#">google+</a></li>
+                            <li><a href="#">linkedin</a></li>
+                        </ul>
+                    </div>
+                    <p class="description">ou ultilize seu email para o registro</p>
+                    <form class="form">
+                        <input type="text" placeholder="Name">
+                        <input type="password" placeholder="password">
+                        <input type="email" placeholder="email">
+                        <button class="btn">sign up</button>
                     </form>
-                </div>
             </div>
         </div>
-        <footer id="appFooter"></footer>
+        <div class="content second-content">
+            <div class="first-column">
+                <h2 class="title">Começe sua jornada por aqui!</h2>
+                <p class="description">Insira suas informações</p>
+                <p class="description">e comece sua jornada conosco</p>
+                <button class="btn">sign in</button>
+            </div>
+            <div class="second-column">
+                <h2 class="title">Bem-vindo de volta!</h2>
+                    <div class="social-media">
+                        <ul>
+                            <li><a href="#">facebook</a></li>
+                            <li><a href="#">google+</a></li>
+                            <li><a href="#">linkedin</a></li>
+                        </ul>
+                    </div>
+                    <p class="description">ou ultilize seu email para o login</p>
+                    <form class="form">
+                        <input type="password" placeholder="password">
+                        <input type="email" placeholder="email">
+                        <a href="#"> esqueceu sua senha?</a>
+                        <button class="btn">Entrar</button>
+                    </form>
+            </div>
+        </div>
     </div>
-    <script src="../js/login.js"></script>
 </body>
 </html>
