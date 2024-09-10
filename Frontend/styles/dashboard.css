@@ -99,7 +99,7 @@ header .header_right .cart .total {
 .banner {
     width: 100%;
     height: 75vh;
-    background-image: url('../Img/banner.webp');
+    background-image: url('../Img/1.png');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -121,16 +121,56 @@ header .header_right .cart .total {
     font-weight: 600;
     padding-bottom: 25px;
     letter-spacing: 2px;
-    color: #272727;
+    color: #fff;
 }
 
 .banner .banner_txt h1 {
     font-size: 58px;
     line-height: 1.1;
-    color: #272727;
+    color: #fff;
 }
 
 /* ========= Facilities========= */
+.facility{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.w-70{
+    width: 84%;
+    margin: auto;
+}
+
+.facility .f_item{
+    width: 220px;
+    height: 255px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    color: #ffffff;
+}
+
+.facility .f_item svg{
+    position: absolute;
+}
+
+.facility .f_item i{
+    z-index: 99;
+    font-size: 32px;
+}
+
+.facility .f_item h3{
+    z-index: 99;
+    text-transform: uppercase;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.1;
+    padding-top: 12px;
+}
 
 
 /* =========Responsividade========= */

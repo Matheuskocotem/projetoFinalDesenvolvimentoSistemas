@@ -26,7 +26,7 @@ body {
 .content::before {
     content: "";
     position: absolute;
-    background-color: #6c2d6a;
+    background-color: #622d89;
     width: 40%;
     height: 100%;
     border-top-left-radius: 15px;
@@ -44,7 +44,7 @@ body {
     color: #fff;
 }
 .title-second {
-    color: #6c2d6a;
+    color: #622d89;
 }
 .description {
     font-size: 14px;
@@ -77,17 +77,17 @@ body {
 }
 .btn-primary:hover {
     background-color: #fff;
-    color: #6c2d6a;
+    color: #622d89;
 }
 .btn-second {
-    background-color: #6c2d6a;
-    border: 1px solid #6c2d6a;
+    background-color: #622d89;
+    border: 1px solid #622d89;
     transition: background-color .5s;
 }
 .btn-second:hover {
     background-color: #fff;
-    border: 1px solid #6c2d6a;
-    color: #6c2d6a;
+    border: 1px solid #622d89;
+    color: #622d89;
 }
 .first-content {
     display: flex;
@@ -116,9 +116,9 @@ body {
     transition: background-color .5s;
 }
 .link-social-media:hover .item-social-media{
-    background-color: #6c2d6a;
+    background-color: #622d89;
     color: #fff;
-    border-color: #6c2d6a;
+    border-color: #622d89;
 }
 .list-social-media {
     display: flex;
@@ -203,13 +203,13 @@ input:-webkit-autofill
     border-bottom-left-radius: 0;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    animation: slidein 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+    animation: slidein 0.4s; /*MODIFIQUEI DE 3s PARA 0.2s*/
 
     z-index: 12;
 }
 
 .sign-up-js .content::before {
-    animation: slideout 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+    animation: slideout 0.4s; /*MODIFIQUEI DE 3s PARA 0.2s*/
 
     z-index: 12;
 }
@@ -233,13 +233,13 @@ input:-webkit-autofill
 
     z-index: -1;
     position: relative;
-    animation: deslocamentoEsq 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+    animation: deslocamentoEsq 0.2s; /*MODIFIQUEI DE 3s PARA 0.2s*/
 }
 
 .sign-up-js .second-content .second-column {
     position: relative;
     z-index: -1;
-    animation: deslocamentoDir 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+    animation: deslocamentoDir 0.2s; /*MODIFIQUEI DE 3s PARA 0.2s*/
 }
 
 /*ANIMAÇÃOO CSS PARA O CONTEÚDO*/
