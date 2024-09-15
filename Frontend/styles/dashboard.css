@@ -173,6 +173,128 @@ header .header_right .cart .total {
 }
 
 
+/* =========compre por categoria ========= */
+
+#shop_category{
+    padding-top: 15px;
+    padding-bottom: 40px;
+}
+
+.heading{
+    text-align: center;
+}
+
+.heading h3{
+    font-size: 27px;
+    margin-bottom: 13px;
+    color: #272727;
+}
+
+.paw {
+    text-align: center;
+    position: relative;
+    display: block;
+    width: 20%;
+    margin: auto;
+    font-size: 19px;
+}
+
+.paw::before,
+.paw::after {
+    content: '';
+    width: 100px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.paw::before {
+    left: -30px; 
+}
+
+.paw::after {
+    right: -30px; 
+}
+
+
+.shop_category .food{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.shop_category .food .food_items{
+    width: 49%;
+    background-color: #fff;
+    box-shadow: 0 0 16px rgba(0 0 0 / 5%);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.shop_category .food .food_items .img{
+    width: 450px;
+}
+
+.shop_category .food .food_items .img img{
+    width: 100%;
+}
+
+.food_details{
+    padding-left: 25px;
+    padding-top: 15px;
+}
+
+.food_details .review{
+    padding-left: 25px;
+    padding-top: 15px;
+}
+
+.food_details .review i{
+    color: #ffd80a;
+}
+
+.food_details .review h4{
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.food_details .review h3{
+    font-size: 17px;
+}
+
+.food_details .review p{
+    font-size: 15px;
+    color: gray;
+    line-height: 1.7;
+    padding: 16px 0;
+    padding-right: 15px;
+}
+
+button{
+    margin: 15px 0;
+    background-color: #ffd80a;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 3px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+
+
+
 /* =========Responsividade========= */
 
 @media (max-width: 1024px) {
