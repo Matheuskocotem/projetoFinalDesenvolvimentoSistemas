@@ -1,3 +1,60 @@
+<?php
+$db_host = 'localhost';
+$db_username = 'root';
+$db_password = '';
+$db_name = 'petideal';
+
+$conn = new mysqli($db_host, $db_username, $db_password, $db_name);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["signin"])) {
+        $email = $conn->real_escape_string($_POST["email"]);
+        $password = $_POST["password"];
+
+        $query = "SELECT password FROM users WHERE email='$email'";
+        $result = $conn->query($query);
+        
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            if (password_verify($password, $row['password'])) {
+                header("Location: dashboard.html");
+                echo "Login successful!";
+            } else {
+                echo "Invalid credentials.";
+            }
+        } else {
+            echo "No user found.";
+        }
+    } elseif (isset($_POST["signup"])) {
+        $name = $conn->real_escape_string($_POST["name"]);
+        $email = $conn->real_escape_string($_POST["email"]);
+        $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
+
+    
+        $query = "SELECT id FROM users WHERE email='$email'";
+        $result = $conn->query($query);
+
+        if ($result->num_rows > 0) {
+            echo "User already exists.";
+        } else {
+            $query = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')";
+            if ($conn->query($query) === TRUE) {
+                echo "New record created successfully";
+            } else {
+                echo "Error: " . $conn->error;
+            }
+        }
+    }
+}
+
+$conn->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -38,29 +95,28 @@
                             </li>
                         </a>
                     </ul>
-                </div><!-- social media -->
+                </div>
                 <p class="description description-second">ou use seu e-mail para registro:</p>
-                <form class="form">
-                    <label class="label-input" for="">
+                <form class="form" id="signupForm" method="POST">
+                    <label class="label-input" for="name">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="Name">
+                        <input type="text" name="name" placeholder="Name" required>
                     </label>
                     
-                    <label class="label-input" for="">
+                    <label class="label-input" for="signupEmail">
                         <i class="far fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email">
+                        <input type="email" name="email" placeholder="Email" required>
                     </label>
                     
-                    <label class="label-input" for="">
+                    <label class="label-input" for="signupPassword">
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Password">
+                        <input type="password" name="password" placeholder="Password" required>
                     </label>
                     
-                    
-                    <button class="btn btn-second">sign up</button>        
+                    <button type="submit" name="signup" class="btn btn-second">sign up</button>        
                 </form>
-            </div><!-- second column -->
-        </div><!-- first content -->
+            </div>
+        </div>
         <div class="content second-content">
             <div class="first-column">
                 <h2 class="title title-primary">Olá, amigo!</h2>
@@ -88,25 +144,24 @@
                             </li>
                         </a>
                     </ul>
-                </div><!-- social media -->
+                </div>
                 <p class="description description-second">ou use sua conta de e-mail:</p>
-                <form class="form">
-                
-                    <label class="label-input" for="">
+                <form class="form" id="signinForm" method="POST">
+                    <label class="label-input" for="signinEmail">
                         <i class="far fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email">
+                        <input type="email" name="email" placeholder="Email" required>
                     </label>
                 
-                    <label class="label-input" for="">
+                    <label class="label-input" for="signinPassword">
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Password">
+                        <input type="password" name="password" placeholder="Password" required>
                     </label>
                 
                     <a class="password" href="#">Esqueceu sua senha?</a>
-                    <button class="btn btn-second">Entrar</button>
+                    <button type="submit" name="signin" class="btn btn-second">Entrar</button>
                 </form>
-            </div><!-- second column -->
-        </div><!-- second-content -->
+            </div>
+        </div>
     </div>
     <script src="../js/login.js"></script>
 </body>
