@@ -46,6 +46,7 @@ header .menu ul li {
     padding: 0 15px;
 }
 
+
 header .menu ul li a {
     color: #272727;
     font-weight: 600;
@@ -93,6 +94,17 @@ header .header_right .cart .total {
     padding-left: 5px;
 }
 
+.header_right .user .logout {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.header_right .user .logout:hover {
+    text-decoration: underline;
+}
+
 
 /* =========Banner========= */
 
@@ -105,7 +117,6 @@ header .header_right .cart .total {
     background-repeat: no-repeat;
     position: relative;
 }
-
 .banner .banner_txt {
     width: 36%;
     height: 30%;
