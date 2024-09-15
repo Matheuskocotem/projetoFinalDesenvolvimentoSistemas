@@ -303,8 +303,90 @@ button:hover{
     color: #fff;
 }
 
+/* =========compre categoria (2)========= */
 
 
+.shop_category .pet_list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+.shop_category .pet_list .single_pet{
+    width: 20%;
+    text-align: center;
+}
+
+.single_pet .img{
+    width: 100%;
+    position: relative;
+}
+.single_pet .img img{
+    width: 100%;
+    z-index: 9;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.single_pet .img svg{
+    position: absolute;
+    top: 15px;
+    left: -20px;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 115%;
+    z-index: -9;
+}
+.single_pet h4{
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.single_pet h4:hover{
+    color: #ffd80a;
+}
+
+.single_pet .img img:hover{
+    scale: 1.1;
+}
+
+/* =========segundo banner(compre agora ) ========= */
+.second_banner{
+    width: 100%;
+    height: 70vh;
+    background-image: url('../Img/segundoBanner.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.second_banner .txt{
+    position: absolute;
+    width: 30%;
+    height: 200px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    text-align: center;
+}
+
+.second_banner .txt h5{
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.second_banner .txt h2{
+    color: #ffffff;
+    font-size: 54px;
+    letter-spacing: 1px;
+    line-height: 1px;
+    padding: 15px 0;
+}
 
 /* =========Responsividade========= */
 
