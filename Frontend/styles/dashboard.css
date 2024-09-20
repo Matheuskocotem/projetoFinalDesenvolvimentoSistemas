@@ -359,18 +359,15 @@ button:hover{
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .second_banner .txt{
-    position: absolute;
-    width: 30%;
-    height: 200px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: auto;
     text-align: center;
+    margin-left: 40%;
+    margin-top: 5%;
 }
 
 .second_banner .txt h5{
@@ -385,8 +382,99 @@ button:hover{
     font-size: 54px;
     letter-spacing: 1px;
     line-height: 1px;
-    padding: 15px 0;
+    padding: 25px 0;
 }
 
+/* ========= Produtos em destaque ========= */
+#feature_product{
+    padding: 70px 0;
+}
+
+.feature_product{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+}
+
+.feature_product .fp_items{
+    background-color: #fff;
+    box-shadow: 0 0 16px rgb(0 0 0 / 5%);
+    border-radius: 15px;
+    overflow: hidden;
+    width: 23%;
+}
+.feature_product .fp_items .img{
+    width: 90%;
+    height: 70%;
+    margin: auto;
+    position: relative;
+    cursor: pointer;
+}
+
+.feature_product .fp_items .img img{
+    width: 100%;
+    height: 100%;
+}
+
+.feature_product .fp_items .img img:hover{
+    scale: 0.9; 
+}
+
+.feature_product .fp_items .img .tag{
+    position: absolute;
+    top: 10px;
+    left: -6px;
+    width: 50px;
+    height: 50px;
+    background-color: #57aa5e;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hidden_icons{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    position: absolute;
+    top: 17px;
+    right: 0;
+    transition: 0.5s;
+}
+.hidden_icons i{
+    width: 30px;
+    height: 30px;
+    padding: 15px;
+    background-color: #8080801d;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+
+}
+
+.feature_product .fp_items .img img:hover .hidden_icons{
+    right: 0;
+}
+
+.hidden_icons i:hover{
+    background-color: #80808039;
+}
+
+.f_item .fp_details{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.f_item .fp_details .reviews{
+    color: #ffd80a;
+    font-size: 14px;
+}
 
 /* =========css========= */
