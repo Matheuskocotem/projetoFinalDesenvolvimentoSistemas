@@ -31,11 +31,11 @@ header {
 }
 
 header .logo {
-    width: 155px;
+    width: 100px;
 }
 
 header .logo img {
-    width: 100%;
+    width: 90%;
 }
 
 header .menu ul {
@@ -434,6 +434,7 @@ button:hover{
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: #fff;
 }
 
 .hidden_icons{
@@ -467,14 +468,102 @@ button:hover{
     background-color: #80808039;
 }
 
-.f_item .fp_details{
+.fp_items .fp_details{
     text-align: center;
     padding-bottom: 30px;
 }
 
-.f_item .fp_details .reviews{
+.fp_items .fp_details .reviews{
     color: #ffd80a;
     font-size: 14px;
 }
+
+.fp_items .fp_details .sub_category{
+    color: gray;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.fp_items .fp_details{
+    border-top: 1px solid #9696961b;
+}
+.fp_items .fp_details h6{
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 0;
+}
+
+.fp_items .fp_details .price del{
+    font-size: 14px;
+}
+
+.fp_items .fp_details .price span{
+    font-size: 17px;
+}
+
+/* =========Banners lado a lado ========= */
+.two_banner {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: hidden; 
+    flex-wrap: nowrap; 
+}
+
+.two_banner .img {
+    padding: 28px;
+    position: relative;
+    flex-basis: calc(50% - 28px);
+}
+
+.two_banner .img img {
+    width: 100%;
+    height: auto;
+}
+
+.two_banner .img .txt {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); 
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0); 
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.two_banner .img:nth-child(1) .txt {
+    left: 30%; 
+    transform: translate(0, -50%); 
+}
+
+.two_banner .img:nth-child(2) .txt {
+    right: 100px; 
+    transform: translate(0, -50%); 
+}
+
+.two_banner .img .txt h5{
+    font-size: 35px;
+    line-height: 1.1;
+    color: white;
+    font-weight: bolder;
+}
+.two_banner .img .txt h4{
+    font-size: 35px;
+    line-height: 1.1;
+    color: white;
+    font-weight: bolder;
+}
+
+.two_banner .img:last-child{
+    color:#ffffff;
+}
+
+.two_banner .img .txt h4{
+    color: #ffffff;
+}
+
+/* =========Ultimos produtos ========= */
 
 /* =========css========= */
