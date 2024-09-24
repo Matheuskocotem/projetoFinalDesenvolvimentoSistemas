@@ -295,7 +295,7 @@ button{
     padding: 10px 15px;
     border-radius: 3px;
     transition: 0.3s;
-    cursor: pointer;
+    cursor: pointer;    
 }
 
 button:hover{
@@ -565,35 +565,36 @@ button:hover{
 }
 
 /* =========Ultimos produtos ========= */
-.latest_pro .latest_products{
+.latest_pro .latest_products {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.latest_pro .latest_products .lp_items{
+.latest_pro .latest_products .lp_items {
     width: 30%;
     overflow: hidden;
-    box-shadow: 0 0 16px rgba(0 0 0 / 5%);
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
     background-color: #ffffff;
     display: flex;
+    flex-direction: column;
     margin: 12px;
     border-radius: 12px;
 }
 
-.latest_pro .latest_products .lp_items .img{
-    width: 40%;
+.latest_pro .latest_products .lp_items .img {
+    width: 100%;
     cursor: pointer;
     transition: 0.3s;
     position: relative;
     overflow: hidden;
 }
 
-.latest_pro .latest_products .lp_items .img img{
+.latest_pro .latest_products .lp_items .img img {
     width: 100%;
 }
 
-.latest_pro .latest_products .lp_items .img .tag{
+.latest_pro .latest_products .lp_items .img .tag {
     width: 27px;
     height: 27px;
     background-color: #57aa5e;
@@ -610,14 +611,37 @@ button:hover{
     align-items: center;
 }
 
-.latest_pro .latest_products .lp_items .hidden_icons{
+.latest_pro .latest_products .lp_items .hidden_icons {
     position: absolute;
     right: -55px;
     top: 10px;
     cursor: pointer;
+    transition: right 0.3s;
 }
-.latest_pro .latest_products .lp_items .img:hover .hidden_icons{
+
+.latest_pro .latest_products .lp_items .img:hover .hidden_icons {
     right: 0;
 }
+
+.lp_details {
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.review {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.review i {
+    color: #f39c12; /* Example color for stars */
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 /* =========css========= */

@@ -11,34 +11,38 @@
     
     <header>
         <div class="logo">
-            <img src="../Img/logo.webp" alt="">
+            <img src="../Img/logo.webp" alt="Logo">
         </div>
         <div class="menu">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Produtos em Destaque</a></li>
-                <li><a href="#">últimos produtos</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/featured-products">Produtos em Destaque</a></li>
+                <li><a href="/latest-products">Últimos Produtos</a></li>
+                <li><a href="/contact">Contato</a></li>
             </ul>
         </div>
         <div class="header_right">
             <div class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <form action="/search" method="GET">
+                    <input type="text" name="query" placeholder="Buscar produtos...">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
             </div>
-            <div class="favorites rel">
+            <div class="favorites rel" data-favorites-count="3">
                 <i class="fa-regular fa-heart"></i>
                 <span class="num">3</span>
             </div>
-            <div class="cart rel">
+            <div class="cart rel" data-cart-total="34.99">
                 <i class="fa-solid fa-cart-plus"></i>
                 <span class="total">R$34.99</span>
             </div>
             <div class="user rel">
-                <i class="fa-solid fa-user"></i>
+                <a href="/login"><i class="fa-solid fa-user"></i></a>
             </div>
         </div>
     </header>
+        
     <div class="banner">
         <div class="banner_txt">
             <p>Bio-Organico 10% OFF</p>
@@ -353,7 +357,7 @@
                     </div>
 
                     <div class="lp_items">
-                        <img src="../Img/latest_product-1.webp" alt="Gaiola Vermelha e Preta">
+                        <img src="../Img/latest_product-2.webp" alt="Gaiola Vermelha e Preta">
                         <div class="tag">-50%</div>
                         <div class="hidden_icons">
                             <i class="fa-solid fa-heart"></i>
@@ -377,7 +381,7 @@
                     </div>
 
                     <div class="lp_items">
-                        <img src="../Img/latest_product-1.webp" alt="Gaiola Vermelha e Preta">
+                        <img src="../Img/latest_product-3.webp" alt="Gaiola Vermelha e Preta">
                         <div class="tag">-50%</div>
                         <div class="hidden_icons">
                             <i class="fa-solid fa-heart"></i>
@@ -401,7 +405,7 @@
                     </div>
 
                     <div class="lp_items">
-                        <img src="../Img/latest_product-1.webp" alt="Gaiola Vermelha e Preta">
+                        <img src="../Img/latest_product-4.webp" alt="Gaiola Vermelha e Preta">
                         <div class="tag">-50%</div>
                         <div class="hidden_icons">
                             <i class="fa-solid fa-heart"></i>
@@ -425,7 +429,7 @@
                     </div>
 
                     <div class="lp_items">
-                        <img src="../Img/latest_product-1.webp" alt="Gaiola Vermelha e Preta">
+                        <img src="../Img/latest_product-5.webp" alt="Gaiola Vermelha e Preta">
                         <div class="tag">-50%</div>
                         <div class="hidden_icons">
                             <i class="fa-solid fa-heart"></i>
@@ -438,7 +442,7 @@
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
-                            </div>
+                            </div>  
                             <h4>Gaiola Vermelha e Preta</h4>
                             <div class="price">
                                 <del>R$200</del> 
@@ -449,7 +453,7 @@
                     </div>
 
                     <div class="lp_items">
-                        <img src="../Img/latest_product-1.webp" alt="Gaiola Vermelha e Preta">
+                        <img src="../Img/latest_product-6.webp" alt="Gaiola Vermelha e Preta">
                         <div class="tag">-50%</div>
                         <div class="hidden_icons">
                             <i class="fa-solid fa-heart"></i>
