@@ -6,73 +6,94 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/dashboard.css">
-</head>
-<body>
-    
-    <header>
-        <div class="logo">
-            <img src="../Img/logo.webp" alt="Logo">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<header class="bg-light shadow-sm">
+    <div class="container d-flex justify-content-between align-items-center py-3">
+        <div class="d-flex align-items-center">
+            <!-- Logo -->
+            <div class="logo mr-4">
+                <img src="../Img/logo.webp" alt="Logo" class="img-fluid" style="max-width: 120px;">
+            </div>
+            <!-- Menu -->
+            <nav class="menu">
+                <ul class="nav">
+                    <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="/shop" class="nav-link">Shop</a></li>
+                    <li class="nav-item"><a href="/featured-products" class="nav-link">Produtos em Destaque</a></li>
+                    <li class="nav-item"><a href="/latest-products" class="nav-link">Últimos Produtos</a></li>
+                    <li class="nav-item"><a href="/contact" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="menu">
-            <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/shop">Shop</a></li>
-                <li><a href="/featured-products">Produtos em Destaque</a></li>
-                <li><a href="/latest-products">Últimos Produtos</a></li>
-                <li><a href="/contact">Contato</a></li>
-            </ul>
-        </div>
-        <div class="header_right">
-            <div class="search">
-                <form action="/search" method="GET">
-                    <input type="text" name="query" placeholder="Buscar produtos...">
-                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
+        <!-- Parte Direita -->
+        <div class="d-flex align-items-center">
+            <!-- Favorites -->
+            <div class="favorites position-relative mr-4">
+                <a href="/favorites">
+                    <i class="fa fa-heart fa-lg" style="color: #622d89;"></i> 
+                    <span id="favorites-count" class="position-absolute top-0 start-100 translate-middle badge badge-pill badge-danger">0</span>
+                </a>
             </div>
-            <div class="favorites rel" data-favorites-count="3">
-                <i class="fa-regular fa-heart"></i>
-                <span class="num">3</span>
+            <!-- Cart -->
+            <div class="cart position-relative mr-4">
+                <a href="/cart">
+                    <i class="fa fa-shopping-cart fa-lg" style="color: #622d89;"></i>
+                    <span id="cart-price" class="ml-2 font-weight-bold" style="color: #622d89;">R$0.00</span>
+                </a>
             </div>
-            <div class="cart rel" data-cart-total="34.99">
-                <i class="fa-solid fa-cart-plus"></i>
-                <span class="total">R$34.99</span>
-            </div>
-            <div class="user rel">
-                <a href="/login"><i class="fa-solid fa-user"></i></a>
+            <!-- User -->
+            <div class="user">
+                <a href="/login" class="text-primary"><i class="fa fa-user fa-lg" style="color: #622d89;"></i></a>
             </div>
         </div>
-    </header>
-        
-    <div class="banner">
+    </div>
+</header>
+
+    <div class="banner d-flex justify-content-start align-items-center">
         <div class="banner_txt">
             <p>Bio-Organico 10% OFF</p>
-            <h1>Nós nos impotamos com seu animal de estimação</h1>
+            <h1>Nós nos importamos com seu animal de estimação</h1>
         </div>
     </div>
+
 
         <!-- facilidade aqui -->
-    <div class="facility w-70">
-        <div class="f_item">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 288 288"><path style="fill:#622d89"><animate repeatCount="indefinite" attributeName="d" dur="5s" values="M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45 c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2 c-3.3,11.2-7.1,23.9-18.5,32c-16.3,11.5-29.5,0.7-48.6,11c-16.2,8.7-12.6,19.7-28.2,33.2c-22.7,19.7-63.8,25.7-79.9,9.7 c-15.2-15.1,0.3-41.7-16.6-54.9C63,186,49.7,196.7,37.5,186z; M51,171.3c-6.1-17.7-15.3-17.2-20.7-32c-8-21.9,0.7-54.6,20.7-67.1c19.5-12.3,32.8,5.5,67.7-3.4C145.2,62,145,49.9,173,43.4 c12-2.8,41.4-9.6,60.2,6.6c19,16.4,16.7,47.5,16,57.7c-1.7,22.8-10.3,25.5-9.4,46.4c1,22.5,11.2,25.8,9.1,42.6 c-2.2,17.6-16.3,37.5-33.5,40.8c-22,4.1-29.4-22.4-54.9-22.6c-31-0.2-40.8,39-68.3,35.7c-17.3-2-32.2-19.8-37.3-34.8 C48.9,198.6,57.8,191,51,171.3z; M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45 c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2 c-3.3,11.2-7.1,23.9-18.5,32c-16.3,11.5-29.5,0.7-48.6,11c-16.2,8.7-12.6,19.7-28.2,33.2c-22.7,19.7-63.8,25.7-79.9,9.7 c-15.2-15.1,0.3-41.7-16.6-54.9C63,186,49.7,196.7,37.5,186z"></animate></path></svg>
-            <i class="fa-solid fa-bag-shopping"></i>
-            <h3>Peça hoje <br> desconto de <br> 10%</h3>
-        </div>
-
-        <div class="f_item">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 288 288"><path style="fill:#622d89"><animate repeatCount="indefinite" attributeName="d" dur="6s" values="M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45 c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2 c-3.3,11.2-7.1,23.9-18.5,32c-16.3,11.5-29.5,0.7-48.6,11c-16.2,8.7-12.6,19.7-28.2,33.2c-22.7,19.7-63.8,25.7-79.9,9.7 c-15.2-15.1,0.3-41.7-16.6-54.9C63,186,49.7,196.7,37.5,186z; M51,171.3c-6.1-17.7-15.3-17.2-20.7-32c-8-21.9,0.7-54.6,20.7-67.1c19.5-12.3,32.8,5.5,67.7-3.4C145.2,62,145,49.9,173,43.4 c12-2.8,41.4-9.6,60.2,6.6c19,16.4,16.7,47.5,16,57.7c-1.7,22.8-10.3,25.5-9.4,46.4c1,22.5,11.2,25.8,9.1,42.6 c-2.2,17.6-16.3,37.5-33.5,40.8c-22,4.1-29.4-22.4-54.9-22.6c-31-0.2-40.8,39-68.3,35.7c-17.3-2-32.2-19.8-37.3-34.8 C48.9,198.6,57.8,191,51,171.3z; M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45 c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2 c-3.3,11.2-7.1,23.9-18.5,32c-16.3,11.5-29.5,0.7-48.6,11c-16.2,8.7-12.6,19.7-28.2,33.2c-22.7,19.7-63.8,25.7-79.9,9.7 c-15.2-15.1,0.3-41.7-16.6-54.9C63,186,49.7,196.7,37.5,186z"></animate></path></svg>
-            <i class="fa-solid fa-circle-arrow-left"></i>
-            <h3> CashBack </h3>
-        </div>
-
-        <div class="f_item">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 288 288"><path style="fill:#622d89"><animate repeatCount="indefinite" attributeName="d" dur="7s" values="M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45 c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2 c-3.3,11.2-7.1,23.9-18.5,32c-16.3,11.5-29.5,0.7-48.6,11c-16.2,8.7-12.6,19.7-28.2,33.2c-22.7,19.7-63.8,25.7-79.9,9.7 c-15.2-15.1,0.3-41.7-16.6-54.9C63,186,49.7,196.7,37.5,186z; M51,171.3c-6.1-17.7-15.3-17.2-20.7-32c-8-21.9,0.7-54.6,20.7-67.1c19.5-12.3,32.8,5.5,67.7-3.4C145.2,62,145,49.9,173,43.4 c12-2.8,41.4-9.6,60.2,6.6c19,16.4,16.7,47.5,16,57.7c-1.7,22.8-10.3,25.5-9.4,46.4c1,22.5,11.2,25.8,9.1,42.6 c-2.2,17.6-16.3,37.5-33.5,40.8c-22,4.1-29.4-22.4-54.9-22.6c-31-0.2-40.8,39-68.3,35.7c-17.3-2-32.2-19.8-37.3-34.8 C48.9,198.6,57.8,191,51,171.3z; M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45 c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2 c-3.3,11.2-7.1,23.9-18.5,32c-16.3,11.5-29.5,0.7-48.6,11c-16.2,8.7-12.6,19.7-28.2,33.2c-22.7,19.7-63.8,25.7-79.9,9.7 c-15.2-15.1,0.3-41.7-16.6-54.9C63,186,49.7,196.7,37.5,186z"></animate></path></svg>
-            <i class="fa-solid fa-headset"></i>
-            <h3>24/7<br> suporte </h3>
-        </div>
+<div class="facility w-70">
+    <div class="f_item">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 288 288">
+            <path style="fill:#622d89">
+                <animate repeatCount="indefinite" attributeName="d" dur="5s" values="M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45 c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2 c-3.3,11.2-7.1,23.9-18.5,32c-16.3,11.5-29.5,0.7-48.6,11c-16.2,8.7-12.6,19.7-28.2,33.2c-22.7,19.7-63.8,25.7-79.9,9.7 c-15.2-15.1,0.3-41.7-16.6-54.9C63,186,49.7,196.7,37.5,186z; M51,171.3c-6.1-17.7-15.3-17.2-20.7-32c-8-21.9,0.7-54.6,20.7-67.1c19.5-12.3,32.8,5.5,67.7-3.4C145.2,62,145,49.9,173,43.4 c12-2.8,41.4-9.6,60.2,6.6c19,16.4,16.7,47.5,16,57.7c-1.7,22.8-10.3,25.5-9.4,46.4c1,22.5,11.2,25.8,9.1,42.6 c-2.2,17.6-16.3,37.5-33.5,40.8c-22,4.1-29.4-22.4-54.9-22.6c-31-0.2-40.8,39-68.3,35.7c-17.3-2-32.2-19.8-37.3-34.8 C48.9,198.6,57.8,191,51,171.3z; M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45 c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2 c-3.3,11.2-7.1,23.9-18.5,32c-16.3,11.5-29.5,0.7-48.6,11c-16.2,8.7-12.6,19.7-28.2,33.2c-22.7,19.7-63.8,25.7-79.9,9.7 c-15.2-15.1,0.3-41.7-16.6-54.9C63,186,49.7,196.7,37.5,186z"></animate>
+            </path>
+        </svg>
+        <i class="fa-solid fa-bag-shopping"></i>
+        <h3>Peça hoje <br> desconto de <br> 10%</h3>
     </div>
 
+    <div class="f_item">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 288 288">
+            <path style="fill:#622d89">
+                <animate repeatCount="indefinite" attributeName="d" dur="6s" values="M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45 c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2 c-3.3,11.2-7.1,23.9-18.5,32c-16.3,11.5-29.5,0.7-48.6,11c-16.2,8.7-12.6,19.7-28.2,33.2c-22.7,19.7-63.8,25.7-79.9,9.7 c-15.2-15.1,0.3-41.7-16.6-54.9C63,186,49.7,196.7,37.5,186z; M51,171.3c-6.1-17.7-15.3-17.2-20.7-32c-8-21.9,0.7-54.6,20.7-67.1c19.5-12.3,32.8,5.5,67.7-3.4C145.2,62,145,49.9,173,43.4 c12-2.8,41.4-9.6,60.2,6.6c19,16.4,16.7,47.5,16,57.7c-1.7,22.8-10.3,25.5-9.4,46.4c1,22.5,11.2,25.8,9.1,42.6 c-2.2,17.6-16.3,37.5-33.5,40.8c-22,4.1-29.4-22.4-54.9-22.6c-31-0.2-40.8,39-68.3,35.7c-17.3-2-32.2-19.8-37.3-34.8 C48.9,198.6,57.8,191,51,171.3z; M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45 c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2 c-3.3,11.2-7.1,23.9-18.5,32c-16.3,11.5-29.5,0.7-48.6,11c-16.2,8.7-12.6,19.7-28.2,33.2c-22.7,19.7-63.8,25.7-79.9,9.7 c-15.2-15.1,0.3-41.7-16.6-54.9C63,186,49.7,196.7,37.5,186z"></animate>
+            </path>
+        </svg>
+        <i class="fa-solid fa-circle-arrow-left"></i>
+        <h3>Peça hoje <br> desconto de <br> 15%</h3>
+    </div>
+
+    <div class="f_item">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 288 288">
+            <path style="fill:#622d89">
+                <animate repeatCount="indefinite" attributeName="d" dur="7s" values="M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45 c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2 c-3.3,11.2-7.1,23.9-18.5,32c-16.3,11.5-29.5,0.7-48.6,11c-16.2,8.7-12.6,19.7-28.2,33.2c-22.7,19.7-63.8,25.7-79.9,9.7 c-15.2-15.1,0.3-41.7-16.6-54.9C63,186,49.7,196.7,37.5,186z; M51,171.3c-6.1-17.7-15.3-17.2-20.7-32c-8-21.9,0.7-54.6,20.7-67.1c19.5-12.3,32.8,5.5,67.7-3.4C145.2,62,145,49.9,173,43.4 c12-2.8,41.4-9.6,60.2,6.6c19,16.4,16.7,47.5,16,57.7c-1.7,22.8-10.3,25.5-9.4,46.4c1,22.5,11.2,25.8,9.1,42.6 c-2.2,17.6-16.3,37.5-33.5,40.8c-22,4.1-29.4-22.4-54.9-22.6c-31-0.2-40.8,39-68.3,35.7c-17.3-2-32.2-19.8-37.3-34.8 C48.9,198.6,57.8,191,51,171.3z; M37.5,186c-12.1-10.5-11.8-32.3-7.2-46.7c4.8-15,13.1-17.8,30.1-36.7C91,68.8,83.5,56.7,103.4,45 c22.2-13.1,51.1-9.5,69.6-1.6c18.1,7.8,15.7,15.3,43.3,33.2c28.8,18.8,37.2,14.3,46.7,27.9c15.6,22.3,6.4,53.3,4.4,60.2 c-3.3,11.2-7.1,23.9-18.5,32c-16.3,11.5-29.5,0.7-48.6,11c-16.2,8.7-12.6,19.7-28.2,33.2c-22.7,19.7-63.8,25.7-79.9,9.7 c-15.2-15.1,0.3-41.7-16.6-54.9C63,186,49.7,196.7,37.5,186z"></animate>
+            </path>
+        </svg>
+        <i class="fa-solid fa-headset"></i>
+        <h3>Peça hoje <br> desconto de <br> 20%</h3>
+    </div>
+</div>
+
      <!-- compre por categoria -->
-      <section id="shop_category" class="w-70">
+     <section id="shop_category" class="w-70">
         <div class="shop_category">
             <div class="heading">
                 <h3>compre por categoria</h3>
@@ -83,7 +104,7 @@
             <div class="food">  
                 <div class="food_items">
                     <div class="img">
-                        <img src="../Img/dogs_food.webp" alt="">
+                        <img src="../Img/dogs_food.webp" alt="Comida de cachorro">
                     </div>
                     <div class="food_details">
                         <div class="review">
@@ -95,17 +116,14 @@
                         </div>
                         <h4>Comida de cachorro</h4>
                         <h3>R$14</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit. Pellentesque feugiat 
-                            ornare malesuada. Sed finibus eget erat
-                            a venenatis.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque feugiat ornare malesuada. Sed finibus eget erat a venenatis.</p>
                         <button>Adicionar ao Carrinho</button>
                     </div>
                 </div>
-
+    
                 <div class="food_items">
                     <div class="img">
-                        <img src="../Img/cats_food.webp" alt="">
+                        <img src="../Img/cats_food.webp" alt="Comida de Gato">
                     </div>
                     <div class="food_details">
                         <div class="review">
@@ -117,17 +135,14 @@
                         </div>
                         <h4>Comida de Gato</h4>
                         <h3>R$16</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur 
-                            adipiscing elit. Pellentesque feugiat 
-                            ornare malesuada. Sed finibus eget erat
-                            a venenatis.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque feugiat ornare malesuada. Sed finibus eget erat a venenatis.</p>
                         <button>Adicionar ao Carrinho</button>
                     </div>
                 </div>
-
             </div>
         </div>
-      </section>
+    </section>
+    
 
      <!-- compre por categoria(2) -->
      <section id="shop_category" class="w-70">
