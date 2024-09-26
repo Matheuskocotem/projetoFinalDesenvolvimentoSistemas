@@ -164,5 +164,10 @@ $conn->close();
         </div>
     </div>
     <script src="../js/login.js"></script>
+
+
+    <footer>
+        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
