@@ -1,11 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> NO cart</h1>
-</body>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Página de Produto</title>
+		<link rel="stylesheet" href="../styles/cart.css" />
+	</head>
+	<body>
+		<header>
+			<img src="img/logo (2).svg" alt="Logotipo">
+		</header>
+		<div class="container-preto">
+		<div class="container-title">
+			<h2>TÊNIS KNU SKOOL BLACK TRUE WHITE</h2></div>
+
+		<main>
+			<div class="container-img">
+				<img
+					src="img/vans.png"
+					alt="imagem do produto"
+				/>
+			</div>
+			<div class="container-info-product">
+				<div class="container-price">
+					<span>R$ 599,99</span>
+					<i class="fa-solid fa-angle-right"></i>
+				</div>
+
+				<div class="container-details-product">
+					<div class="form-group">
+						<label for="cor">Cor</label>
+						<select name="cor" id="cor">
+							<option disabled selected value="">
+								Escolha uma opção
+							</option>
+							<option value="vermelho">Clássico</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="tamanho">Tamanho</label>
+						<select name="tamanho" id="tamanho">
+							<option disabled selected value="">
+								Escolha uma opção
+							</option>
+							<option value="40">40</option>
+							<option value="42">42</option>
+							<option value="43">43</option>
+							<option value="44">44</option>
+						</select>
+					</div>
+					<button class="btn-clean">Limpar</button>
+				</div>
+
+				<div class="container-add-cart">
+					<div class="container-quantity">
+						<input
+							type="number"
+							placeholder="1"
+							value="1"
+							min="1"
+							class="input-quantity"
+						/>
+						<div class="btn-increment-decrement">
+							<i class="fa-solid fa-chevron-up" id="increment"></i>
+							<i class="fa-solid fa-chevron-down" id="decrement"></i>
+						</div>
+					</div>
+					<button class="btn-add-to-cart">
+						<i class="fa-solid fa-plus"></i>
+						Adicionar ao carrinho
+					</button>
+				</div>
+
+				<div class="container-description">
+					<div class="title-description">
+						<h4>Descrição</h4>
+						<i class="fa-solid fa-chevron-down"></i>
+					</div>
+					<div class="text-description">
+						<p>
+							Um estilo “volumoso” típico dos anos 90 que foi inspirado no tênis de cano baixo da Vans. O Knu Skool é a interpretação contemporânea de um estilo clássico dos anos 90, caracterizado por sua lingueta volumosa e Sidestripe Vans moldada em 3D, com acabamento marcado por cadarços oversized e robustos. Com perfil marcante e detalhes em estilo dramático, o Tênis Knu Skool Black True White brinca com o original Old Skool enquanto mescla um ícone do passado com as tendências do presente.
+						</p>
+					</div>
+				</div>
+
+				<div class="container-additional-information">
+					<div class="title-additional-information">
+						<h4>Informação adicional</h4>
+						<i class="fa-solid fa-chevron-down"></i>
+					</div>
+					<div class="text-additional-information hidden">
+						<p>----------</p>
+					</div>
+				</div>
+
+				<div class="container-reviews">
+					<div class="title-reviews">
+						<h4>Avaliações</h4>
+						<i class="fa-solid fa-chevron-down"></i>
+					</div>
+					<div class="text-reviews hidden">
+						<p>----------</p>
+					</div>
+				</div>
+
+				<div class="container-social">
+					<span>Compartilhar</span>
+					<divclass="container-buttons-social">
+						<a href="#"><i class="fa-solid fa-envelope"></i></a>
+						<a href="#"><i class="fa-brands fa-facebook"></i></a>
+						<a href="#"><i class="fa-brands fa-twitter"></i></a>
+						<a href="#"><i class="fa-brands fa-instagram"></i></a>
+						<a href="#"><i class="fa-brands fa-pinterest"></i></a>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+	</body>
 </html>
